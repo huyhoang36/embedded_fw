@@ -1,5 +1,6 @@
 /* 
- * File: hw1_lib.h
+ * File: hw1_lib.h  by Hoang Huy Nguyen
+ * 
  * HW1: Implement two functions:
  *   1. convert a gray code to binary number
  *   2. convert a binary number to a gray code
@@ -10,6 +11,8 @@
 
 #include<stdio.h>
 #include<stdint.h>
+
+#define BIT(x)   (1 << (x))
 
 uint16_t gray_to_binary(uint16_t gray);
 

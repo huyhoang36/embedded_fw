@@ -14,12 +14,12 @@ int main(int argc, char* argv[])
      return 0;
    }
    if(argv[1][0]=='b') {
-       sscanf(argv[2], "%X", &g);
+       sscanf(argv[2], "%X", (unsigned int *)&g);
        b = gray_to_binary(g);
        printf("g:%X => b:%X\n", g, b);
    }
    if(argv[1][0]=='g') {
-       sscanf(argv[2], "%X",  &b);
+       sscanf(argv[2], "%X",  (unsigned int *)&b);
        g = binary_to_gray(b);
        printf("b:%X => g:%X\n", b, g);
    }
