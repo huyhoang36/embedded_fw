@@ -1,0 +1,53 @@
+a) Export to uVision:
+
+--------------------------------------------
+
+The number of text file is 78
+
+hello_world_uvision$  find . -name \*.h -o -name \*.cpp | wc -l
+78
+ 
+The number of lines of text code is: 13982
+ 
+hello_world_uvision$ find . -name \*.h -exec cat {} + | wc -l
+13958
+ 
+hello_world_uvision$ find . -name \*.cpp -exec cat {} + | wc -l
+24
+ 
+The number of binary files is: 5
+/hello_world_uvision$ find . -name \*.o | wc -l
+5
+ 
+b) Export to GCC ARM Embedded:
+------------------------------------------------
+The number of text file is still 78
+ 
+hello_world_arm_embedded$  find . -name \*.h -o -name \*.cpp | wc -l
+78
+ 
+The number of lines of text code is: 13982
+ 
+hello_world_arm_embedded$ find . -name \*.h -exec cat {} + | wc -l
+13958
+ 
+hello_world_arm_embedded$ find . -name \*.cpp -exec cat {} + | wc -l
+24
+ 
+The number of binary files is: 4
+hello_world_arm_embedded$ find . -name \*.o | wc -l
+4
+ 
+File differences between a) and b):
+ 
+~/UCSC_extension/homework/HW2$ diff -qr hello_world_uvision/ hello_world_arm_embedded/
+Only in hello_world_uvision/: hello_world.uvopt
+Only in hello_world_uvision/: hello_world.uvproj
+Only in hello_world_arm_embedded/: Makefile
+Only in hello_world_uvision/mbed/TARGET_LPC1768: TOOLCHAIN_ARM_STD
+Only in hello_world_arm_embedded/mbed/TARGET_LPC1768: TOOLCHAIN_GCC_ARM
+~/UCSC_extension/homework/HW2$ 
+ 
+------------------------------------------------
+Entry point address of the program is:
+  Image Entry point : 0x000000c5
