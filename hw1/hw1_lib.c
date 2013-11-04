@@ -60,16 +60,7 @@ uint16_t gray_to_binary(uint16_t gray)
  */
 uint16_t binary_to_gray(uint16_t binary)
 {
-    uint16_t gray;
-
-    /* Calculate the Xor of all bits first */
-    gray = binary ^ (binary >> 1);
-
-    /* MSB of Gray code is the same as Binary */
-    gray &= ~BIT(15);
-    gray |= binary & BIT(15);
-
-    return gray;
+    return (binary ^ (binary >> 1)); 
 }
 
  
